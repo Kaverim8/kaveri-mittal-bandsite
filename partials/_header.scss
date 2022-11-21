@@ -1,0 +1,33 @@
+
+@import 'variable';
+
+.navigation {
+    background-color: $primarybackground-color;
+    color: white;
+
+    &__heading {
+        // margin: 0px auto;
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 32px;
+        width: 120px;
+        height: 20px;
+        margin: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        // overflow: hidden;
+        // background-color: $secondarybackground-color;
+        // font-weight: map-get($font-weights, bold);
+    }
+    &__list {
+        // list-style-type: none;
+        margin: 0px;
+        display: flex;
+        justify-content: space-around;
+        font-size: 14px;
+        line-height: 22px;
+        padding-top: 24px;
+        font-weight: map-get($font-weights, demi);
+    }
+}

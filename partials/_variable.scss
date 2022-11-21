@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style: none;
+}
+// @font-face {
+//     font-family: avenir next;
+    
+// }
+$font-weights: (
+    "regular": 400,
+    "bold": 700,
+    "demi": 600
+);
+$primarybackground-color: #323232;
+$secondarybackground-color: #000000;
+$primarytext-color: #afafaf;
+$secondarytext-color: #e1e1e1;

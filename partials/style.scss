@@ -1,0 +1,44 @@
+@import 'variable' , 'header';
+
+.hero {
+    background-image: url(../assets/Images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 30vh;
+
+    &__image {
+        display: flex;
+        position: relative;
+        top: 50%;
+        left: 5%;
+        color: $secondarytext-color;
+    }
+}
+
+.musicians {
+    display: flex;
+    flex-direction: column;
+
+
+    &__label {
+        padding-top: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    &__picture {
+        width: 100vw;
+        height: 26vh;
+        position: relative;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    &__info {
+        padding: 16px;
+        font-weight: map-get($font-weights , bold );
+    }
+}
