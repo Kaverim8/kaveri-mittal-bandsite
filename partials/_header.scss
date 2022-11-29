@@ -1,12 +1,18 @@
 
-@import 'variable';
+@import 'variable' , 'mixins';
 
 .navigation {
     background-color: $primarybackground-color;
     color: white;
+    @include tablet {
+        display: inline-flex;
+        justify-content: flex-start;
+        width: 100vw;
+        padding-left: 36px;
+        vertical-align: middle;
+    }
 
     &__heading {
-        // margin: 0px auto;
         display: flex;
         justify-content: center;
         font-size: 24px;
@@ -16,12 +22,14 @@
         margin: auto;
         padding-top: 16px;
         padding-bottom: 16px;
-        // overflow: hidden;
-        // background-color: $secondarybackground-color;
-        // font-weight: map-get($font-weights, bold);
+        font-weight: map-get($font-weights, bold);
+
+    @include tablet {
+        margin: 0;
     }
+    }
+
     &__list {
-        // list-style-type: none;
         margin: 0px;
         display: flex;
         justify-content: space-around;
@@ -30,4 +38,9 @@
         padding-top: 24px;
         font-weight: map-get($font-weights, demi);
     }
+
+    &__liststyle {
+        padding-left: 36px;
+    }
+
 }

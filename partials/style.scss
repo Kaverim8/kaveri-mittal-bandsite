@@ -1,4 +1,4 @@
-@import 'variable' , 'header';
+@import 'variable' , 'header' , 'footer';
 
 .hero {
     background-image: url(../assets/Images/hero-bio.jpg);
@@ -6,6 +6,7 @@
     background-size: cover;
     width: 100vw;
     height: 30vh;
+    // opacity: 0.5 #323232;
 
     &__image {
         display: flex;
@@ -16,10 +17,15 @@
     }
 }
 
+
 .musicians {
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
 
     &__label {
         padding-top: 24px;
@@ -35,10 +41,56 @@
         padding-left: 16px;
         padding-right: 16px;
         padding-bottom: 16px;
+
+        @include tablet {
+            height: 50vh;
+            width: 80vw;
+        }
     }
 
     &__info {
-        padding: 16px;
-        font-weight: map-get($font-weights , bold );
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        font-weight: map-get($font-weights , bold);
+    }
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px;
+    background-color: #fafafa;
+
+    &__concert {
+        // padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    &__heading {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: map-get($font-weights, bold);
+    }
+}
+
+.bees {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &__subheading {
+        padding-bottom: 16px;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: map-get($font-weights , demi);
+    }
+
+    &__description {
+        padding-bottom: 16px;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: map-get($font-weights , regular);
     }
 }

@@ -1,0 +1,15 @@
+@import 'variable';
+
+.footer {
+    background-color: $primarybackground-color;
+    color: $secondarytext-color;
+    padding: 16px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: map-get($font-weights , regular);
+    
+    &__content {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
