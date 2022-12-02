@@ -133,6 +133,57 @@
         }
     }
 }
+
+
+// Bees
+.bees {
+
+    @include tablet {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
+
+    &__subheading {
+        padding-bottom: 16px;
+        width: 288px;
+        margin: 0 auto;
+        @include Font-subHeader-mobile;
+        font-family: 'AvenirNext-Regular';
+
+        @include tablet {
+            padding-top: 48px;
+            padding-bottom: 36px;
+            @include Font-sectionHeader-tablet;
+        }
+    }
+
+    &__description {
+        padding-bottom: $padding-mobile;
+        width: 97%;
+        font-family: 'AvenirNext-Regular';
+        @include Font-bodyCopy-mobile;
+        
+        @include tablet {
+            @include Font-bodyCopy-tablet;
+        }
+    }
+
+    &__float {
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
+        margin: 0 auto;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+}
+
 // OurGallery
 .gallery {
     display: flex;
@@ -184,55 +235,6 @@
             font-weight: map-get($font-weights , bold );
             line-height: 44px;
             padding-left: 16px;
-        }
-    }
-}
-
-// Bees
-.bees {
-
-    @include tablet {
-        padding-left: $padding-tablet;
-        padding-right: $padding-tablet;
-    }
-
-    &__subheading {
-        padding-bottom: 16px;
-        width: 288px;
-        margin: 0 auto;
-        @include Font-subHeader-mobile;
-        font-family: 'AvenirNext-Regular';
-
-        @include tablet {
-            padding-top: 48px;
-            padding-bottom: 36px;
-            @include Font-sectionHeader-tablet;
-        }
-    }
-
-    &__description {
-        padding-bottom: $padding-mobile;
-        width: 97%;
-        font-family: 'AvenirNext-Regular';
-        @include Font-bodyCopy-mobile;
-        
-        @include tablet {
-            @include Font-bodyCopy-tablet;
-        }
-    }
-
-    &__float {
-        display: flex;
-        flex-direction: column;
-        max-width: 90%;
-        margin: 0 auto;
-
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            max-width: 90%;
-            margin: 0 auto;
         }
     }
 }

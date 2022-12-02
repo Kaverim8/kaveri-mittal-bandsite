@@ -26,7 +26,7 @@
 
 
 
-// breakPoints
+// breakPoints mediaquery
 @mixin tablet {
     @media (min-width: #{$tablet-width}) {
         @content;
