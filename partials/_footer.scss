@@ -1,15 +1,88 @@
 @import 'variable';
 
+@font-face {
+    font-family: 'AvenirNext-Regular';
+    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
+        url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'AvenirNext-Bold';
+    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
+        url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'AvenirNext-Demi';
+    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
+        url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
+}
+
 .footer {
-    background-color: $primarybackground-color;
-    color: $secondarytext-color;
-    padding: 16px;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: map-get($font-weights , regular);
+    background-color: $BandSite-Black;
+    color: $white;
+    padding: $padding-mobile;
+    @include Font-bodyCopy-mobile;
+    font-family: 'AvenirNext-Regular';
     
     &__content {
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding-top: $padding-mobile;
+        padding-bottom: $padding-mobile;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include tablet {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        }   
+    }
+
+    &__caption {
+        @include Font-sectionHeader-mobile;
+
+        padding-bottom: $padding-mobile;
+
+        @include tablet {
+            display: inline-flex;
+            justify-content: space-evenly;
+            align-items: flex-end ;
+            @include Font-sectionHeader-tablet;
+            padding-left: $padding-tablet;
+        }
+    }
+    &__icons {
+        padding-left: $padding-mobile;
+
+        @include tablet {
+            padding-left: 24px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    &__contact-mail {
+        text-decoration: none;
+        color: $white;
+    }
+    &__mark {
+        padding-bottom: $padding-mobile;
+
+        @include tablet {
+            position: absolute;
+        }
+    }
+
+    &__copyRight {
+            @include Font-lablesButtons-mobile;
+
+            @include tablet {
+                @include Font-lablesButtons-tablet;
+                position: absolute;
+                right: 57%;
+            }
     }
 }

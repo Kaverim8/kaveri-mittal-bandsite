@@ -1,96 +1,238 @@
 @import 'variable' , 'header' , 'footer';
 
+@font-face {
+    font-family: 'AvenirNext-Regular';
+    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
+        url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'AvenirNext-Bold';
+    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
+        url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'AvenirNext-Demi';
+    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
+        url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
+}
+
 .hero {
-    background-image: url(../assets/Images/hero-bio.jpg);
+    background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+                    url(../assets/Images/hero-bio.jpg);
     background-position: center;
     background-size: cover;
     width: 100vw;
     height: 30vh;
-    // opacity: 0.5 #323232;
+
+    @include tablet {
+        width: 100vw;
+        height: 60vh;
+    }
+
+    @include tablet {
+        height: 70vh;
+    }
 
     &__image {
         display: flex;
         position: relative;
-        top: 50%;
+        width: 75%;
+        top: 42%;
         left: 5%;
-        color: $secondarytext-color;
+        color: $white;
+        font-family: 'AvenirNext-Regular';
+        @include Font-pageHeader-mobile;
+
+
+        @include tablet {
+            @include Font-pageHeader-tablet;
+        }
+
+        @include desktop {
+            left: 10%;
+            top: 40%;
+        }
     }
 }
 
+//Musicians
+.midSection {
+    padding-left: $padding-mobile;
+    padding-right: $padding-mobile;
 
+    @include tablet {
+        padding-left: 3rem;
+        padding-right: 3rem; 
+    }
+
+    @include desktop {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
 .musicians {
     display: flex;
     flex-direction: column;
 
-    @include tablet {
-        padding-left: $padding-tablet;
-        padding-right: $padding-tablet;
+    &__container {
+        max-width: 90%;
+        margin: 0 auto;
+
+        @include desktop {
+            max-width: 80%;
+            margin: 0 auto;
+        }
     }
 
     &__label {
-        padding-top: 24px;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 16px;
+        padding-top: 1.5rem;
+        padding-bottom: $padding-mobile;
+        font-family: 'AvenirNext-Regular';
+        @include Font-sectionHeader-mobile;
+
+        @include tablet {
+            padding-top: 2.25rem;
+            position: relative;
+            @include Font-sectionHeader-tablet;
+        }
+
+        @include desktop {
+            left: 3rem;
+        }
     }
 
     &__picture {
-        width: 100vw;
+        width: 100%;
         height: 26vh;
         position: relative;
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 16px;
+        padding-bottom: $padding-mobile;
 
         @include tablet {
             height: 50vh;
-            width: 80vw;
+            width: 100%;
+        }
+
+        @include desktop {
+            width: 100%;
+            margin: 0 auto;
         }
     }
 
     &__info {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 16px;
-        font-weight: map-get($font-weights , bold);
+        padding-bottom: $padding-mobile;
+        @include Font-subHeader-mobile;
+        font-family: 'AvenirNext-Regular';
+
+        @include tablet {
+            @include Font-subHeader-tablet;
+        }
+        @include desktop {
+            max-width: 75%;
+        }
     }
 }
-
+// OurGallery
 .gallery {
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: 16px;
+    padding: $padding-mobile;
     background-color: #fafafa;
+    padding-right: 16px;
 
-    &__concert {
-        // padding-top: 16px;
-        padding-bottom: 16px;
+    @include tablet {
+        width: 100vw;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__design {
+        display: flex;
+        flex-direction: column ;
+        justify-content: center;
+        gap: 1rem;
+
+        @include tablet {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            flex-direction: row;
+    }
+    }
+
+    &__design--concert {
+        @include tablet {
+            width: 27vw;
+            height: auto;
+        }
     }
 
     &__heading {
         font-size: 24px;
         line-height: 32px;
         font-weight: map-get($font-weights, bold);
+        padding-bottom: 16px;
+
+        @include tablet {
+            font-size: 36px;
+            font-weight: map-get($font-weights , bold );
+            line-height: 44px;
+            padding-left: 16px;
+        }
     }
 }
 
+// Bees
 .bees {
-    padding-left: 16px;
-    padding-right: 16px;
+
+    @include tablet {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
 
     &__subheading {
         padding-bottom: 16px;
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: map-get($font-weights , demi);
+        width: 288px;
+        margin: 0 auto;
+        @include Font-subHeader-mobile;
+        font-family: 'AvenirNext-Regular';
+
+        @include tablet {
+            padding-top: 48px;
+            padding-bottom: 36px;
+            @include Font-sectionHeader-tablet;
+        }
     }
 
     &__description {
-        padding-bottom: 16px;
-        font-size: 13px;
-        line-height: 18px;
-        font-weight: map-get($font-weights , regular);
+        padding-bottom: $padding-mobile;
+        width: 97%;
+        font-family: 'AvenirNext-Regular';
+        @include Font-bodyCopy-mobile;
+        
+        @include tablet {
+            @include Font-bodyCopy-tablet;
+        }
+    }
+
+    &__float {
+        display: flex;
+        flex-direction: column;
+        max-width: 90%;
+        margin: 0 auto;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            max-width: 90%;
+            margin: 0 auto;
+        }
     }
 }

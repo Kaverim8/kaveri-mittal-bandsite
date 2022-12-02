@@ -7,21 +7,33 @@
 ul {
     list-style: none;
 }
-// @font-face {
-//     font-family: avenir next;
-    
-// }
+ 
+body {
+    min-width: 100%;
+    overflow-x: hidden;
+}
+
+// Font-weights
 $font-weights: (
     "regular": 400,
-    "bold": 700,
+    "bold": 600,
     "demi": 600
 );
-$primarybackground-color: #323232;
-$secondarybackground-color: #000000;
-$primarytext-color: #afafaf;
-$secondarytext-color: #e1e1e1;
+// Font-family 
 
-$padding-mobile: 2rem;
+
+// color
+$BandSite-Black:#323232;
+$Silver: #afafaf;
+$white: #ffffff;
+$BandSite-DarkBlack: #000000;
+$Mercury: #e1e1e1;
+$Alabaster: #fafafa;
+
+// Width
 $tablet-width: 768px;
 $desktop-width: 1280px;
-$padding-tablet: 4.25rem;
+
+// Padding
+$padding-tablet: 2.25rem;
+$padding-mobile: 1rem;

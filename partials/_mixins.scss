@@ -1,15 +1,108 @@
 @import 'variable' ;
 
+@mixin AveRegular {
+    @font-face {
+        font-family: 'AvenirNext-Regular';
+        src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
+            url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
+    }
+} 
 
+@mixin AveBold {
+    @font-face {
+        font-family: 'AvenirNext-Bold';
+        src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
+            url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
+    }
+}
+
+@mixin AveDemi {
+    @font-face {
+        font-family: 'AvenirNext-Demi';
+        src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
+            url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
+    }
+}
+
+
+
+// breakPoints
 @mixin tablet {
     @media (min-width: #{$tablet-width}) {
         @content;
         }  
 }
 
-
 @mixin desktop {
-    @media (min-width: #{$desktop-width}) {
+    @media screen and (min-width: #{$desktop-width}) {
         @content;
     }
+}
+
+// mobileTextStyles
+@mixin Font-pageHeader-mobile {
+        font-size: 24px;
+        font-weight: map-get($font-weights , bold);
+        line-height: 32px;
+}
+
+@mixin Font-sectionHeader-mobile {
+    font-size: 24px;
+    font-weight: map-get($font-weights , bold);
+    line-height: 32px;
+}
+
+@mixin Font-subHeader-mobile {
+    font-size: 14px;
+    font-weight: map-get($font-weights , demi);
+    line-height: 22px;
+}
+
+@mixin Font-bodyCopy-mobile {
+    font-size: 13px;
+    font-weight: map-get($font-weights , regular);
+    line-height: 18px;
+}
+
+@mixin Font-lablesButtons-mobile {
+    font-size: 10px;
+    font-weight: map-get($font-weights , bold);
+    line-height: 20px;
+}
+
+// desktop And Tablet TextStyles
+@mixin Font-pageHeader-tablet {
+    font-size: 60px;
+    font-weight: map-get($font-weights , bold);
+    line-height: 68px;
+}
+
+@mixin Font-sectionHeader-tablet {
+    font-size: 36px;
+    font-weight: map-get($font-weights , bold);
+    line-height: 44px;
+}
+
+@mixin Font-subHeader-tablet {
+    font-size: 24px;
+    font-weight: map-get($font-weights , demi);
+    line-height: 32px;
+}
+
+@mixin Font-bodyCopy-tablet {
+    font-size: 14px;
+    font-weight: map-get($font-weights , regular);
+    line-height: 22px;
+}
+
+@mixin Font-lablesButtons-tablet {
+    font-size: 12px;
+    font-weight: map-get($font-weights , bold);
+    line-height: 20px;
+}
+
+@mixin Font-footerCopy-tablet {
+    font-size: 14px;
+    font-weight: map-get($font-weights , regular);
+    line-height: 20px;
 }
