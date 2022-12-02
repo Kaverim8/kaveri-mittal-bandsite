@@ -17,6 +17,20 @@
     src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
         url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
 }
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    min-width: 100%;
+    overflow-x: hidden;
+}
 
 .hero {
     background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
@@ -45,7 +59,6 @@
         font-family: 'AvenirNext-Regular';
         @include Font-pageHeader-mobile;
 
-
         @include tablet {
             @include Font-pageHeader-tablet;
         }
@@ -56,7 +69,6 @@
         }
     }
 }
-
 //Musicians
 .midSection {
     padding-left: $padding-mobile;
@@ -134,7 +146,6 @@
     }
 }
 
-
 // Bees
 .bees {
 
@@ -144,15 +155,15 @@
     }
 
     &__subheading {
-        padding-bottom: 16px;
+        padding-bottom: $padding-mobile;
         width: 288px;
         margin: 0 auto;
         @include Font-subHeader-mobile;
         font-family: 'AvenirNext-Regular';
 
         @include tablet {
-            padding-top: 48px;
-            padding-bottom: 36px;
+            padding-top: 3rem;
+            padding-bottom: 2.25rem;
             @include Font-sectionHeader-tablet;
         }
     }
@@ -218,6 +229,12 @@
     }
 
     &__design--concert {
+        filter: grayscale(100%);
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+
         @include tablet {
             width: 27vw;
             height: auto;
