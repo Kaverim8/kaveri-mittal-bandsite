@@ -1,22 +1,5 @@
-@import 'variable' , 'header' , 'footer';
+@import 'variable' , 'header' , 'footer' , 'fonts';
 
-@font-face {
-    font-family: 'AvenirNext-Regular';
-    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'AvenirNext-Bold';
-    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'AvenirNext-Demi';
-    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
-}
 * {
     box-sizing: border-box;
     padding: 0px;
@@ -162,6 +145,8 @@ body {
         font-family: 'AvenirNext-Regular';
 
         @include tablet {
+            width: auto;
+            padding-left: 1.5rem;
             padding-top: 3rem;
             padding-bottom: 2.25rem;
             @include Font-sectionHeader-tablet;
@@ -203,7 +188,7 @@ body {
     flex-wrap: nowrap;
     padding: $padding-mobile;
     background-color: #fafafa;
-    padding-right: 16px;
+    padding-right: $padding-mobile;
 
     @include tablet {
         width: 100vw;
@@ -212,6 +197,7 @@ body {
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
+        padding-top: $padding-tablet;
     }
 
     &__design {
@@ -221,11 +207,12 @@ body {
         gap: 1rem;
 
         @include tablet {
-            display: flex;
+            // display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
             flex-direction: row;
-    }
+            padding-bottom: 2rem;
+        }
     }
 
     &__design--concert {
@@ -242,16 +229,14 @@ body {
     }
 
     &__heading {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: map-get($font-weights, bold);
-        padding-bottom: 16px;
+        @include Font-sectionHeader-mobile;
+        padding-bottom: $padding-mobile;
+        font-family: 'AvenirNext-Regular';
 
         @include tablet {
-            font-size: 36px;
-            font-weight: map-get($font-weights , bold );
-            line-height: 44px;
-            padding-left: 16px;
+            @include Font-sectionHeader-tablet;
+            padding-left:$padding-tablet;
+            padding-bottom: 1.5rem;
         }
     }
 }

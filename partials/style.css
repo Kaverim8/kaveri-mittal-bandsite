@@ -10,6 +10,18 @@
   font-family: "AvenirNext-Demi";
   src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format("truetype");
 }
+@font-face {
+  font-family: "AvenirNext-Regular";
+  src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "AvenirNext-Bold";
+  src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "AvenirNext-Demi";
+  src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format("truetype");
+}
 .navigation--header {
   width: 100vw;
   background-color: #323232;
@@ -60,7 +72,6 @@
 }
 @media (min-width: 768px) {
   .navigation__list {
-    display: flex;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -89,6 +100,18 @@
   border-bottom: 2px solid white;
 }
 
+@font-face {
+  font-family: "AvenirNext-Regular";
+  src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format("truetype");
+}
+@font-face {
+  font-family: "AvenirNext-Bold";
+  src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "AvenirNext-Demi";
+  src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format("truetype");
+}
 @font-face {
   font-family: "AvenirNext-Regular";
   src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format("truetype");
@@ -397,6 +420,8 @@ body {
 }
 @media (min-width: 768px) {
   .bees__subheading {
+    width: auto;
+    padding-left: 1.5rem;
     padding-top: 3rem;
     padding-bottom: 2.25rem;
     font-size: 36px;
@@ -442,7 +467,7 @@ body {
   flex-wrap: nowrap;
   padding: 1rem;
   background-color: #fafafa;
-  padding-right: 16px;
+  padding-right: 1rem;
 }
 @media (min-width: 768px) {
   .gallery {
@@ -452,6 +477,7 @@ body {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-top: 2.25rem;
   }
 }
 .gallery__design {
@@ -462,10 +488,10 @@ body {
 }
 @media (min-width: 768px) {
   .gallery__design {
-    display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
     flex-direction: row;
+    padding-bottom: 2rem;
   }
 }
 .gallery__design--concert {
@@ -482,15 +508,17 @@ body {
 }
 .gallery__heading {
   font-size: 24px;
-  line-height: 32px;
   font-weight: 600;
-  padding-bottom: 16px;
+  line-height: 32px;
+  padding-bottom: 1rem;
+  font-family: "AvenirNext-Regular";
 }
 @media (min-width: 768px) {
   .gallery__heading {
     font-size: 36px;
     font-weight: 600;
     line-height: 44px;
-    padding-left: 16px;
+    padding-left: 2.25rem;
+    padding-bottom: 1.5rem;
   }
 }/*# sourceMappingURL=style.css.map */

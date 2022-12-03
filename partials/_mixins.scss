@@ -1,28 +1,28 @@
-@import 'variable' ;
+@import 'variable' , 'fonts' ;
 
-@mixin AveRegular {
-    @font-face {
-        font-family: 'AvenirNext-Regular';
-        src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
-            url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
-    }
-} 
+// @mixin AveRegular {
+//     @font-face {
+//         font-family: 'AvenirNext-Regular';
+//         src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
+//             url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
+//     }
+// } 
 
-@mixin AveBold {
-    @font-face {
-        font-family: 'AvenirNext-Bold';
-        src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
-            url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
-    }
-}
+// @mixin AveBold {
+//     @font-face {
+//         font-family: 'AvenirNext-Bold';
+//         src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
+//             url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
+//     }
+// }
 
-@mixin AveDemi {
-    @font-face {
-        font-family: 'AvenirNext-Demi';
-        src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
-            url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
-    }
-}
+// @mixin AveDemi {
+//     @font-face {
+//         font-family: 'AvenirNext-Demi';
+//         src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
+//             url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
+//     }
+// }
 
 
 

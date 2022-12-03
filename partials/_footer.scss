@@ -1,21 +1,4 @@
-@import 'variable';
-
-@font-face {
-    font-family: 'AvenirNext-Regular';
-    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'AvenirNext-Bold';
-    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'AvenirNext-Demi';
-    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
-}
+@import 'variable' , 'mixins' , 'fonts';
 
 .footer {
     background-color: $BandSite-Black;

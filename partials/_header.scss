@@ -1,22 +1,5 @@
 
-@import 'variable' , 'mixins';
-
-@font-face {
-    font-family: 'AvenirNext-Regular';
-    src: url(../assets/Font/AvenirNextLTPro-Regular.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTPro.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'AvenirNext-Bold';
-    src: url(../assets/Font/AvenirNextLTPro-Bold.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTProBold.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'AvenirNext-Demi';
-    src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format('opentype')
-        url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format('truetype');
-}
+@import 'variable' , 'mixins' , 'fonts';
 
 .navigation--header {   
         width: 100vw;
@@ -64,7 +47,7 @@
         @include Font-subHeader-mobile;
 
         @include tablet {
-        display: flex;
+        // display: flex;
         width: fit-content;
         justify-content: flex-start;
         flex-direction: row;
