@@ -1,7 +1,7 @@
 
 @import 'variable' , 'mixins' , 'fonts';
 
-.navigation--header {   
+.header {   
         width: 100vw;
         background-color: $BandSite-Black;
 }
@@ -47,14 +47,12 @@
         @include Font-subHeader-mobile;
 
         @include tablet {
-        // display: flex;
-        width: fit-content;
-        justify-content: flex-start;
-        flex-direction: row;
-        padding-top: 1.75rem;
-        gap: 2.25rem;
-        font-family: 'AvenirNext-Regular';
-        @include Font-lablesButtons-tablet
+            width: fit-content;
+            justify-content: flex-start;
+            flex-direction: row;
+            padding-top: 1.75rem;
+            gap: 2.25rem;
+            @include Font-lablesButtons-tablet;
         }
     }
 
@@ -62,8 +60,9 @@
         padding-bottom: 1rem;
         width: 47%;
         text-align: center;
+
         @include tablet {
-        padding-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
         }
     }
 

@@ -15,6 +15,11 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: $white;
+}
+
 .hero {
     background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
                     url(../assets/Images/hero-bio.jpg);
@@ -28,12 +33,11 @@ body {
         height: 60vh;
     }
 
-    @include tablet {
+    @include desktop {
         height: 70vh;
     }
 
-    &__image {
-        display: flex;
+    &__page-title {
         position: relative;
         width: 75%;
         top: 42%;
@@ -48,15 +52,12 @@ body {
 
         @include desktop {
             left: 10%;
-            top: 40%;
+            top: 35%;
         }
     }
 }
 //Musicians
 .midSection {
-    padding-left: $padding-mobile;
-    padding-right: $padding-mobile;
-
     @include tablet {
         padding-left: 3rem;
         padding-right: 3rem; 
@@ -71,18 +72,9 @@ body {
     display: flex;
     flex-direction: column;
 
-    &__container {
-        max-width: 90%;
-        margin: 0 auto;
-
-        @include desktop {
-            max-width: 80%;
-            margin: 0 auto;
-        }
-    }
-
     &__label {
         padding-top: 1.5rem;
+        padding-left: $padding-mobile;
         padding-bottom: $padding-mobile;
         font-family: 'AvenirNext-Regular';
         @include Font-sectionHeader-mobile;
@@ -94,7 +86,17 @@ body {
         }
 
         @include desktop {
-            left: 3rem;
+            left: 4.25rem;
+        }
+    }
+
+    &__container {
+        max-width: 90%;
+        margin: 0 auto;
+
+        @include desktop {
+            max-width: 80%;
+            margin: 0 auto;
         }
     }
 
@@ -110,8 +112,8 @@ body {
         }
 
         @include desktop {
-            width: 100%;
-            margin: 0 auto;
+            width: 90%;
+            left: 3rem;
         }
     }
 
@@ -124,17 +126,22 @@ body {
             @include Font-subHeader-tablet;
         }
         @include desktop {
-            max-width: 75%;
+            width: 80%;
+            padding-left: 3rem;
         }
     }
 }
 
 // Bees
 .bees {
-
     @include tablet {
         padding-left: $padding-tablet;
         padding-right: $padding-tablet;
+    }
+
+    @include desktop {
+        width: 85%;
+        margin: auto;
     }
 
     &__subheading {
@@ -151,16 +158,9 @@ body {
             padding-bottom: 2.25rem;
             @include Font-sectionHeader-tablet;
         }
-    }
 
-    &__description {
-        padding-bottom: $padding-mobile;
-        width: 97%;
-        font-family: 'AvenirNext-Regular';
-        @include Font-bodyCopy-mobile;
-        
-        @include tablet {
-            @include Font-bodyCopy-tablet;
+        @include desktop {
+            padding-left: 2.50rem;
         }
     }
 
@@ -176,6 +176,17 @@ body {
             gap: 1rem;
             max-width: 90%;
             margin: 0 auto;
+        }
+    }
+
+    &__description {
+        padding-bottom: $padding-mobile;
+        width: 97%;
+        font-family: 'AvenirNext-Regular';
+        @include Font-bodyCopy-mobile;
+        
+        @include tablet {
+            @include Font-bodyCopy-tablet;
         }
     }
 }
@@ -200,6 +211,30 @@ body {
         padding-top: $padding-tablet;
     }
 
+    @include desktop {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+    }
+
+// our gallery
+    &__heading {
+        @include Font-sectionHeader-mobile;
+        padding-bottom: $padding-mobile;
+        font-family: 'AvenirNext-Regular';
+
+        @include tablet {
+            @include Font-sectionHeader-tablet;
+            padding-left: $padding-tablet;
+            padding-bottom: 1.5rem;
+        }
+
+        @include desktop {
+            position: relative;
+            left: 3rem;
+        }
+    }
+
+// gallery photos
     &__design {
         display: flex;
         flex-direction: column ;
@@ -207,7 +242,6 @@ body {
         gap: 1rem;
 
         @include tablet {
-            // display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
             flex-direction: row;
@@ -215,7 +249,7 @@ body {
         }
     }
 
-    &__design--concert {
+    &__design-concert {
         filter: grayscale(100%);
 
         &:hover {
@@ -226,17 +260,9 @@ body {
             width: 27vw;
             height: auto;
         }
-    }
 
-    &__heading {
-        @include Font-sectionHeader-mobile;
-        padding-bottom: $padding-mobile;
-        font-family: 'AvenirNext-Regular';
-
-        @include tablet {
-            @include Font-sectionHeader-tablet;
-            padding-left:$padding-tablet;
-            padding-bottom: 1.5rem;
+        @include desktop {
+            width: 26vw;
         }
     }
 }
