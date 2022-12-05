@@ -71,4 +71,9 @@
         border-bottom: 2px solid white;
         
     }
+
+    &__shows:hover {
+        border-bottom: 2px solid white;
+        color: $white;
+    }
 }

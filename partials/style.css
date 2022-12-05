@@ -98,6 +98,10 @@
   color: #ffffff;
   border-bottom: 2px solid white;
 }
+.navigation__shows:hover {
+  border-bottom: 2px solid white;
+  color: #ffffff;
+}
 
 @font-face {
   font-family: "AvenirNext-Regular";
@@ -123,10 +127,23 @@
   font-family: "AvenirNext-Demi";
   src: url(../assets/Font/AvenirNextLTPro-Demi.otf) format("opentype") url(../assets/Font/Alternative/AvenirNextLTProDemi.ttf) format("truetype");
 }
+.bottom {
+  width: 100vw;
+  margin: auto;
+  background-color: #323232;
+}
+
 .footer {
   background-color: #323232;
   color: #ffffff;
   padding: 1rem;
+}
+@media screen and (min-width: 1280px) {
+  .footer {
+    width: 90vw;
+    margin: auto;
+    padding-left: 2.25rem;
+  }
 }
 .footer__content {
   padding-top: 1rem;
@@ -147,8 +164,6 @@
     padding-bottom: 3rem;
     justify-content: space-evenly;
     flex-direction: row;
-    width: 90%;
-    margin: 0 auto;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -165,6 +180,13 @@
     align-items: baseline;
     width: 90%;
     margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .footer__content-subheader {
+    width: 100%;
+    margin: auto;
+    justify-content: flex-start;
   }
 }
 .footer__caption {
@@ -210,6 +232,7 @@
 @media screen and (min-width: 1280px) {
   .footer__copyRight {
     padding-top: 2.25rem;
+    padding-left: 0rem;
   }
 }
 
@@ -225,7 +248,7 @@
 }
 @media screen and (min-width: 1280px) {
   #bandSite {
-    left: 64rem;
+    left: 75vw;
   }
 }
 

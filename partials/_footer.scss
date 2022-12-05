@@ -1,9 +1,22 @@
 @import 'variable' , 'mixins' , 'fonts';
 
+
+.bottom {
+    width: 100vw;
+    margin: auto;
+    background-color: $BandSite-Black;
+}
+
 .footer {
     background-color: $BandSite-Black;
     color: $white;
     padding: $padding-mobile;
+
+    @include desktop {
+        width: 90vw;
+        margin: auto;
+        padding-left: $padding-tablet;
+    }
     
     &__content {
         padding-top: $padding-mobile;
@@ -19,25 +32,31 @@
             padding-bottom: 3rem;
             justify-content: space-evenly;
             flex-direction: row;
-            width: 90%;
-            margin: 0 auto;
         }   
 
         @include desktop {
             justify-content: flex-start;
             gap: 5.25rem;
+            
         }
 
     }
 
     &__content-subheader {
-            @include tablet {
-                display: flex;
-                flex-direction: row;
-                gap: 3rem;
-                align-items: baseline;
-                width: 90%;
-                margin: 0 auto;
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: baseline;
+            width: 90%;
+            margin: 0 auto;
+
+            @include desktop {
+                width: 100%;
+                margin: auto;
+                justify-content: flex-start;
+                
+            } 
         }
     }
 
@@ -76,6 +95,7 @@
 
             @include desktop {
                 padding-top: $padding-tablet;
+                padding-left: 0rem;
             }
     }
 }
@@ -90,6 +110,6 @@
     }
 
     @include desktop {
-        left:64rem;
+        left:75vw;
     }
 }
