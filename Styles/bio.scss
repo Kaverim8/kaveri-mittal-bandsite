@@ -1,4 +1,4 @@
-@import 'variable' , 'header' , 'footer' , 'fonts';
+@import 'partials/_variable.scss' , 'partials/_header.scss' , 'partials/_footer.scss' , 'partials/_fonts.scss' , 'partials/_mixins.scss';
 
 * {
     box-sizing: border-box;

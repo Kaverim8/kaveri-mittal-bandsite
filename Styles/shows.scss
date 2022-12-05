@@ -1,0 +1,21 @@
+@import 'partials/_variable.scss' , 'partials/_header.scss' , 'partials/_footer.scss' , 'partials/_fonts.scss' , 'partials/_mixins.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    min-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
