@@ -1,4 +1,5 @@
 *.css.map
+.DS_Store
 CopyDeck/
 MockUps/
 styleGuide/
