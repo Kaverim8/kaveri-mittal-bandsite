@@ -60,6 +60,7 @@
         padding-bottom: 1rem;
         width: 47%;
         text-align: center;
+        color: $Silver;
 
         @include tablet {
             padding-bottom: 1.5rem;
@@ -69,11 +70,12 @@
     &__active {
         color: $white;
         border-bottom: 2px solid white;
-        
+        width: auto;
     }
 
     &__shows:hover {
         border-bottom: 2px solid white;
         color: $white;
+        width: auto;
     }
 }

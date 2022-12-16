@@ -266,3 +266,117 @@ a {
         }
     }
 }
+
+.container {
+    padding: $padding-mobile;  
+
+    &__label {
+        @include Font-subHeader-mobile;
+        font-family: 'AvenirNext-Regular';
+
+        @include tablet {
+            @include Font-sectionHeader-tablet;
+        }
+    }
+
+    &__first-part {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: flex-start;
+        @include Font-lablesButtons-mobile;
+            font-family: 'AvenirNext-Regular';
+            color: $Silver;
+
+    @include tablet {
+        @include Font-lablesButtons-tablet;
+    }
+
+    }
+    &__banner {
+        width:46px;
+        height:46px;
+        border-radius: 50%;
+    }
+
+    &__right {
+        padding-top: 1.75rem;
+    }
+
+    &__name {
+        height: 1.75rem;
+        padding-left: 0.25rem;
+        background-color: $Alabaster;
+        border: 1px solid $Mercury;
+        border-radius: 4px;
+
+        &--add-comment {
+            height: 5rem;
+            padding-top: 0.25rem;
+            font-family: 'AvenirNext-Regular';
+            @include Font-lablesButtons-mobile;
+        }
+    }
+
+    &__button {
+        background-color: $BandSite-Black;
+        color: $white;
+        height: 40px;
+        border-radius: 4px;
+        padding-bottom: 1rem;
+        width: 100%;
+        font-family: 'AvenirNext-Regular';
+        @include Font-lablesButtons-mobile;
+
+        @include tablet {
+            max-width: 150px;
+            padding-left: 32px;
+            padding-right: 32px;
+            @include Font-lablesButtons-tablet;
+        }
+    }
+
+    &__second-part {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+        font-family: 'AvenirNext-Regular';
+        @include Font-bodyCopy-mobile;
+
+        @include tablet {
+            @include Font-bodyCopy-tablet;
+        }
+    }
+}
+
+
+#form {
+    width: 75%;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1rem;
+}
+
+
+.comments {
+    font-family: 'AvenirNext-Regular';
+    display: inline-flex;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-bottom: 1px solid $Mercury;
+    @include Font-bodyCopy-mobile;
+
+
+    &__image {
+        width: 36px;
+        height: 36px;
+        background-color: $Silver;
+        border-radius: 50%;
+    }
+}
