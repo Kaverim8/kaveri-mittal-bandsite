@@ -80,3 +80,24 @@
     font-weight: map-get($font-weights , regular);
     line-height: 20px;
 }
+
+
+
+
+@mixin Button {
+    background-color: $BandSite-Black;
+        color: $white;
+        height: 40px;
+        border-radius: 4px;
+        width: 100%;
+        border: none;
+        font-family: 'AvenirNext-Regular';
+        @include Font-lablesButtons-mobile;
+
+        @include tablet {
+            max-width: 150px;
+            padding-left: 32px;
+            padding-right: 32px;
+            @include Font-lablesButtons-tablet;
+}
+}

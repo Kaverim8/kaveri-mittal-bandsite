@@ -29,10 +29,18 @@ a {
     background-size: cover;
     color: $white;
 
+    @include tablet {
+        height: 55vh; 
+    }
+        
+
+
     &__heading {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        padding-top: 2rem;
+        padding-left: 1rem;
         font-family: 'AvenirNext-Regular';
     }
 
@@ -53,20 +61,94 @@ a {
     }
 }
 
-
 .shows {
     font-family: 'AvenirNext-Regular';
 
     &__title {
+        padding: $padding-mobile;
         @include Font-sectionHeader-mobile;
 
         @include tablet {
+            padding-top: $padding-tablet;
+            padding-left: $padding-mobile;
             @include Font-sectionHeader-tablet;
         }
     }
 
-    // &__content {
+    &__content {
+        font-family: 'AvenirNext-Regular';
+        display: flex;
+        flex-direction: column;
+        gap: 0.50rem;
+        justify-content: flex-start;
+        @include Font-bodyCopy-mobile;
 
-    // }
+        @include tablet {
+            @include Font-bodyCopy-tablet;
+        }
+    }
 
+    &__details {
+        border-bottom: 2px solid $Mercury;
+
+        &:hover {
+            background-color: $Mercury;   
+        }
+        
+
+        @include tablet {
+            border: none;
+        
+        &:not(:first-child)  { > article > div > h3 {
+                display: none;
+            }
+        }
+    }
+}
+    &__main-content {
+        gap: 0.50rem;
+        display: flex;
+        flex-direction: column;
+        padding-left: $padding-mobile;
+        padding-right: $padding-mobile;
+        padding-bottom: $padding-mobile;
+        
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            gap: 2rem;
+            width: 95%;
+            margin: auto;
+            border-bottom: 2px solid $Mercury;
+        
+        }
+        
+    }
+
+    &__buynow-button {
+        @include Button;
+
+        &:hover {
+            background-color: $BandSite-DarkBlack;
+            color: $white;
+        }
+    }
+    
+    &__sub-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.50rem;
+
+        &--color {
+            color: silver;
+            font-weight: 100;       
+        }
+        
+        &--font-weight {
+            font-weight: 600;
+        }
+        
+    }
 }

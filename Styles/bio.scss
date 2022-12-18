@@ -81,12 +81,12 @@ a {
 
         @include tablet {
             padding-top: 2.25rem;
-            position: relative;
+            padding-left: 0px;
             @include Font-sectionHeader-tablet;
         }
 
         @include desktop {
-            left: 4.25rem;
+            padding-left: 4.25rem;
         }
     }
 
@@ -266,16 +266,24 @@ a {
         }
     }
 }
-
+// comment conversation section
 .container {
     padding: $padding-mobile;  
 
-    &__label {
+    &__header {
         @include Font-subHeader-mobile;
         font-family: 'AvenirNext-Regular';
+        font-weight: 100;
 
         @include tablet {
             @include Font-sectionHeader-tablet;
+        }
+
+        @include desktop {
+            padding-top: 3rem;
+            padding-bottom:1.5rem;
+            padding-left: 5rem;
+            font-weight: 100;
         }
     }
 
@@ -290,6 +298,13 @@ a {
 
     @include tablet {
         @include Font-lablesButtons-tablet;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        width: 50%;
+        padding-left: 3.25rem;
     }
 
     }
@@ -304,35 +319,36 @@ a {
     }
 
     &__name {
-        height: 1.75rem;
+        height: 2.25rem;
         padding-left: 0.25rem;
         background-color: $Alabaster;
         border: 1px solid $Mercury;
         border-radius: 4px;
+        font-family: 'AvenirNext-Regular';
+        @include Font-lablesButtons-mobile;
+
 
         &--add-comment {
             height: 5rem;
-            padding-top: 0.25rem;
-            font-family: 'AvenirNext-Regular';
+            padding-top: 0.50rem;
+            padding-left: 0.25rem;
             @include Font-lablesButtons-mobile;
         }
     }
 
     &__button {
-        background-color: $BandSite-Black;
-        color: $white;
-        height: 40px;
-        border-radius: 4px;
-        padding-bottom: 1rem;
-        width: 100%;
-        font-family: 'AvenirNext-Regular';
-        @include Font-lablesButtons-mobile;
-
         @include tablet {
-            max-width: 150px;
-            padding-left: 32px;
-            padding-right: 32px;
-            @include Font-lablesButtons-tablet;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    &__comment-button {
+        @include Button;
+        font-size: 13px;
+        
+        &:hover {
+            background-color: $BandSite-DarkBlack;
+            color: $white;
         }
     }
 
@@ -340,17 +356,26 @@ a {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         gap: 1rem;
         font-family: 'AvenirNext-Regular';
         @include Font-bodyCopy-mobile;
 
         @include tablet {
             @include Font-bodyCopy-tablet;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        @include desktop {
+            width: 50%;
+            padding-left: 3.25rem;
         }
     }
 }
 
-
+// form 
 #form {
     width: 75%;
 }
@@ -361,22 +386,46 @@ fieldset {
     flex-direction: column;
     gap: 0.25rem;
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
-
 
 .comments {
     font-family: 'AvenirNext-Regular';
     display: inline-flex;
     gap: 1rem;
-    padding-top: 1.5rem;
+    padding-bottom: $padding-mobile;
     border-bottom: 1px solid $Mercury;
     @include Font-bodyCopy-mobile;
-
 
     &__image {
         width: 36px;
         height: 36px;
-        background-color: $Silver;
+        background-color: $Mercury;
         border-radius: 50%;
     }
+
+    &__main-content {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        &--date {
+            color: $Silver;
+        }
+
+        &--person {
+            font-weight: 600;
+        }
+    }
+}
+
+form > div > fieldset > input[type= "text"]:active + label {
+    outline: 1px solid green;
 }

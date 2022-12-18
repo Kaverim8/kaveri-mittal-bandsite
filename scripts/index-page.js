@@ -26,20 +26,22 @@ function createCommentCard(post) {
     const commentImageEl = document.createElement("div");
     commentImageEl.classList.add("comments__image");
 
+    const commentMainContentEl = document.createElement("div");
+    commentMainContentEl.classList.add("comments__main-content")
 
     const commentContentEl = document.createElement("div");
     commentContentEl.classList.add("comments__content");
 
     const dateEl = document.createElement("p");
-    dateEl.classList.add("comments__date");
+    dateEl.classList.add("comments__content--date");
     dateEl.innerText = post.timeStamp;
     
     const nameEl = document.createElement("p");
-    nameEl.classList.add("comments__person");
+    nameEl.classList.add("comments__content--person");
     nameEl.innerText = post.name;
 
     commentContentEl.append(nameEl, dateEl);
-    
+
     const commentTextEl = document.createElement("div");
     commentTextEl.classList.add("comments__text");
 
@@ -48,7 +50,9 @@ function createCommentCard(post) {
 
     commentTextEl.append(commentEl);
 
-    cardEl.append(commentImageEl, commentContentEl, commentTextEl);
+    commentMainContentEl.append(commentContentEl, commentTextEl);
+
+    cardEl.append(commentImageEl, commentMainContentEl);
 
     return cardEl;
 }
@@ -78,7 +82,7 @@ const commentData = {
 console.log(commentData);
 
 commentsFormEl.reset();
-commentArray.push(commentData);
+commentArray.unshift(commentData);
 renderComments();
 
 }
@@ -91,7 +95,6 @@ renderComments();
 
 
 
-// formEl.reset();
 // const commentSubmission = {
 //     name: e.target.name.checked,
 //     comment: e.target.comment.checked,

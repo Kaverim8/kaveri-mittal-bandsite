@@ -307,10 +307,17 @@ a {
   background-size: cover;
   color: #ffffff;
 }
+@media (min-width: 768px) {
+  .hero {
+    height: 55vh;
+  }
+}
 .hero__heading {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-top: 2rem;
+  padding-left: 1rem;
   font-family: "AvenirNext-Regular";
 }
 .hero__heading-sub {
@@ -342,14 +349,105 @@ a {
   font-family: "AvenirNext-Regular";
 }
 .shows__title {
+  padding: 1rem;
   font-size: 24px;
   font-weight: 600;
   line-height: 32px;
 }
 @media (min-width: 768px) {
   .shows__title {
+    padding-top: 2.25rem;
+    padding-left: 1rem;
     font-size: 36px;
     font-weight: 600;
     line-height: 44px;
   }
+}
+.shows__content {
+  font-family: "AvenirNext-Regular";
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+@media (min-width: 768px) {
+  .shows__content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+.shows__details {
+  border-bottom: 2px solid #e1e1e1;
+}
+.shows__details:hover {
+  background-color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .shows__details {
+    border: none;
+  }
+  .shows__details:not(:first-child) > article > div > h3 {
+    display: none;
+  }
+}
+.shows__main-content {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__main-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    width: 95%;
+    margin: auto;
+    border-bottom: 2px solid #e1e1e1;
+  }
+}
+.shows__buynow-button {
+  background-color: #323232;
+  color: #ffffff;
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  font-family: "AvenirNext-Regular";
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+}
+@media (min-width: 768px) {
+  .shows__buynow-button {
+    max-width: 150px;
+    padding-left: 32px;
+    padding-right: 32px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+}
+.shows__buynow-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.shows__sub-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.shows__sub-content--color {
+  color: silver;
+  font-weight: 100;
+}
+.shows__sub-content--font-weight {
+  font-weight: 600;
 }/*# sourceMappingURL=shows.css.map */

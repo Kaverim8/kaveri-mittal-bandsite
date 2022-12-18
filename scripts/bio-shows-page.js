@@ -27,27 +27,32 @@ let showsArray = [{
 
 function createShowsCard(show) {
     const cardEl = document.createElement("div");
+    cardEl.setAttribute('id', 'shows-effects')
     cardEl.classList.add("shows__details");
+
+    const showsEl = document.createElement("article");
+    showsEl.classList.add("shows__main-content");
 
     // This is for date and day of shows
     const dateEl = document.createElement("div");
-    dateEl.classList.add("shows__date");
+    dateEl.classList.add("shows__sub-content");
 
-    const dateParagraphEl = document.createElement("p")
-    dateParagraphEl.classList.add("span");
+    const dateParagraphEl = document.createElement("h3")
+    dateParagraphEl.classList.add("shows__sub-content--color");
     dateParagraphEl.innerText = "Date";
 
     const dayEl = document.createElement("p");
+    dayEl.classList.add("shows__sub-content--font-weight")
     dayEl.innerText = show.day;
 
     dateEl.append(dateParagraphEl, dayEl);
 
     // This is for venue of the shows
     const venueEl = document.createElement("div");
-    venueEl.classList.add("shows__venue");
+    venueEl.classList.add("shows__sub-content");
 
-    const venueParagraphEl = document.createElement("p")
-    venueParagraphEl.classList.add("span");
+    const venueParagraphEl = document.createElement("h3")
+    venueParagraphEl.classList.add("shows__sub-content--color");
     venueParagraphEl.innerText = "Venue";
 
     const addressEl = document.createElement("p");
@@ -57,18 +62,29 @@ function createShowsCard(show) {
 
     // This is for location of the shows
     const locationEl = document.createElement("div");
-    locationEl.classList.add("shows__location");
+    locationEl.classList.add("shows__sub-content");
 
-    const locationParagraphEl = document.createElement("p")
-    locationParagraphEl.classList.add("span");
+    const locationParagraphEl = document.createElement("h3")
+    locationParagraphEl.classList.add("shows__sub-content--color");
     locationParagraphEl.innerText = "Location";
 
     const cityEl = document.createElement("p");
     cityEl.innerText = show.location;
 
+    const BuyTicketsEl = document.createElement("div")
+    BuyTicketsEl.classList.add("shows__shows-button")
+
+    const BuyNowEl = document.createElement("button");
+    BuyNowEl.classList.add("shows__buynow-button");
+    BuyNowEl.innerText = "BUY TICKETS";
+
+    BuyTicketsEl.append(BuyNowEl)
+
     locationEl.append(locationParagraphEl, cityEl);
 
-    cardEl.append(dateEl, venueEl, locationEl);
+    showsEl.append(dateEl, venueEl, locationEl, BuyTicketsEl);
+
+    cardEl.appendChild(showsEl);
 
     return cardEl;
 }
@@ -86,3 +102,5 @@ function renderShows() {
 }
 
 renderShows();
+
+const showsOnClick = document.querySelector("#shows__effects");

@@ -371,7 +371,7 @@ a {
 @media (min-width: 768px) {
   .musicians__label {
     padding-top: 2.25rem;
-    position: relative;
+    padding-left: 0px;
     font-size: 36px;
     font-weight: 600;
     line-height: 44px;
@@ -379,7 +379,7 @@ a {
 }
 @media screen and (min-width: 1280px) {
   .musicians__label {
-    left: 4.25rem;
+    padding-left: 4.25rem;
   }
 }
 .musicians__container {
@@ -582,17 +582,26 @@ a {
 .container {
   padding: 1rem;
 }
-.container__label {
+.container__header {
   font-size: 14px;
   font-weight: 600;
   line-height: 22px;
   font-family: "AvenirNext-Regular";
+  font-weight: 100;
 }
 @media (min-width: 768px) {
-  .container__label {
+  .container__header {
     font-size: 36px;
     font-weight: 600;
     line-height: 44px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container__header {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    padding-left: 5rem;
+    font-weight: 100;
   }
 }
 .container__first-part {
@@ -611,6 +620,14 @@ a {
     font-size: 12px;
     font-weight: 600;
     line-height: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container__first-part {
+    width: 50%;
+    padding-left: 3.25rem;
   }
 }
 .container__banner {
@@ -622,34 +639,45 @@ a {
   padding-top: 1.75rem;
 }
 .container__name {
-  height: 1.75rem;
+  height: 2.25rem;
   padding-left: 0.25rem;
   background-color: #fafafa;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
-}
-.container__name--add-comment {
-  height: 5rem;
-  padding-top: 0.25rem;
   font-family: "AvenirNext-Regular";
   font-size: 10px;
   font-weight: 600;
   line-height: 20px;
 }
-.container__button {
-  background-color: #323232;
-  color: #ffffff;
-  height: 40px;
-  border-radius: 4px;
-  padding-bottom: 1rem;
-  width: 100%;
-  font-family: "AvenirNext-Regular";
+.container__name--add-comment {
+  height: 5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.25rem;
   font-size: 10px;
   font-weight: 600;
   line-height: 20px;
 }
 @media (min-width: 768px) {
   .container__button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.container__comment-button {
+  background-color: #323232;
+  color: #ffffff;
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  font-family: "AvenirNext-Regular";
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 13px;
+}
+@media (min-width: 768px) {
+  .container__comment-button {
     max-width: 150px;
     padding-left: 32px;
     padding-right: 32px;
@@ -658,10 +686,16 @@ a {
     line-height: 20px;
   }
 }
+.container__comment-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
 .container__second-part {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   gap: 1rem;
   font-family: "AvenirNext-Regular";
   font-size: 13px;
@@ -673,6 +707,14 @@ a {
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container__second-part {
+    width: 50%;
+    padding-left: 3.25rem;
   }
 }
 
@@ -686,13 +728,14 @@ fieldset {
   flex-direction: column;
   gap: 0.25rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .comments {
   font-family: "AvenirNext-Regular";
   display: inline-flex;
   gap: 1rem;
-  padding-top: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #e1e1e1;
   font-size: 13px;
   font-weight: 400;
@@ -701,6 +744,26 @@ fieldset {
 .comments__image {
   width: 36px;
   height: 36px;
-  background-color: #afafaf;
+  background-color: #e1e1e1;
   border-radius: 50%;
+}
+.comments__main-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.comments__content {
+  display: flex;
+  justify-content: space-between;
+}
+.comments__content--date {
+  color: #afafaf;
+}
+.comments__content--person {
+  font-weight: 600;
+}
+
+form > div > fieldset > input[type=text]:active + label {
+  outline: 1px solid green;
 }/*# sourceMappingURL=bio.css.map */
