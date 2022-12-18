@@ -27,8 +27,7 @@ let showsArray = [{
 
 function createShowsCard(show) {
     const cardEl = document.createElement("div");
-    cardEl.setAttribute('id', 'shows-effects')
-    cardEl.classList.add("shows__details");
+    cardEl.classList.add("shows__details", "shows__active");
 
     const showsEl = document.createElement("article");
     showsEl.classList.add("shows__main-content");
@@ -103,4 +102,21 @@ function renderShows() {
 
 renderShows();
 
-const showsOnClick = document.querySelector("#shows__effects");
+// const showsOnClick = document.querySelectorAll(".shows__active");
+// showsOnClick.forEach(shows__active => {
+//     shows__active.addEventListener('click', function(){
+//         shows__active.forEach(showsClick => showsClick.classList.remove('active'));
+//         this.classList.add('active');
+//     });
+// });
+
+const showsOnClick = document.querySelectorAll(".shows__details");
+showsOnClick.forEach(shows__details => {
+    shows__details.addEventListener('mousedown', function(){
+        showsOnClick.forEach(showsClick => showsClick.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+
+

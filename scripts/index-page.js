@@ -21,7 +21,7 @@ const commentArray = [
 
 function createCommentCard(post) {
     const cardEl = document.createElement("div");
-    cardEl.classList.add("comments");
+    cardEl.classList.add("comments", "comments--border");
 
     const commentImageEl = document.createElement("div");
     commentImageEl.classList.add("comments__image");
@@ -84,21 +84,7 @@ console.log(commentData);
 commentsFormEl.reset();
 commentArray.unshift(commentData);
 renderComments();
-
 }
 
 commentsFormEl.addEventListener("submit", formSubmitHandler);
 renderComments();
-
-
-
-
-
-
-// const commentSubmission = {
-//     name: e.target.name.checked,
-//     comment: e.target.comment.checked,
-//     image: e.target.image.value
-// }
-
-// console.log(commentSubmission); 

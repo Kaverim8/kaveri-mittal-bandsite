@@ -20,11 +20,15 @@ a {
     color: $white;
 }
 
+input {
+    border: hidden ;
+}
+
 .hero {
     background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
                     url(../assets/Images/hero-shows.jpg);
     width: 100%;
-    height: 38vh;
+    height: 40vh;
     background-position: center;
     background-size: cover;
     color: $white;
@@ -79,9 +83,11 @@ a {
     }
 
     &__sound-cloud {
+        padding-top: 1rem;
+
         @include tablet {
             padding-left: 1rem;
-            padding-top: 1rem;
+            padding-top: 1.5rem;
         }
     }
 }
@@ -96,15 +102,27 @@ iframe {
 }
 
 .shows {
-    font-family: 'AvenirNext-Regular';
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        height: 60vh;
+        overflow: hidden;
+    }
 
+    &__header{
+        font-family: 'AvenirNext-Regular';
+    }
+    
     &__title {
         padding: $padding-mobile;
         @include Font-sectionHeader-mobile;
 
         @include tablet {
             padding-top: $padding-tablet;
-            padding-left: $padding-mobile;
+            padding-left: 3.25rem;
             @include Font-sectionHeader-tablet;
         }
     }
@@ -120,15 +138,17 @@ iframe {
         @include tablet {
             @include Font-bodyCopy-tablet;
         }
+
+        @include desktop {
+            position: relative;
+            top: 3rem;
+            width: 70%;
+            
+        }
     }
 
     &__details {
         border-bottom: 2px solid $Mercury;
-
-        &:hover {
-            background-color: $Mercury;   
-        }
-        
 
         @include tablet {
             border: none;
@@ -139,6 +159,18 @@ iframe {
         }
     }
 }
+
+    &__active {
+        cursor:pointer;
+        &:hover {
+            background-color: $Alabaster;   
+        }
+    
+        :active, :focus {
+            background-color: $Mercury;
+        }
+}
+
     &__main-content {
         gap: 0.50rem;
         display: flex;
@@ -150,15 +182,21 @@ iframe {
 
         @include tablet {
             flex-direction: row;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-around;
             gap: 2rem;
             width: 95%;
             margin: auto;
-            border-bottom: 2px solid $Mercury;
+            border-bottom: 1px solid $Mercury;
         
         }
         
+    }
+
+    &__shows-button {
+        @include tablet {
+            padding-top: 1rem;
+        }
     }
 
     &__buynow-button {
@@ -177,7 +215,8 @@ iframe {
 
         &--color {
             color: silver;
-            font-weight: 100;       
+            font-weight: 100; 
+            padding-bottom: 1rem;      
         }
         
         &--font-weight {
@@ -186,3 +225,4 @@ iframe {
         
     }
 }
+

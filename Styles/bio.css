@@ -144,7 +144,8 @@
 @media screen and (min-width: 1280px) {
   .footer {
     width: 90vw;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 2.25rem;
   }
 }
@@ -181,7 +182,7 @@
     flex-direction: row;
     gap: 3rem;
     align-items: baseline;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
   }
 }
@@ -228,13 +229,12 @@
     font-weight: 600;
     line-height: 20px;
     width: 50%;
-    padding-left: 3rem;
+    padding-left: 2rem;
     padding-bottom: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .footer__copyRight {
-    padding-top: 2.25rem;
     padding-left: 0rem;
   }
 }
@@ -582,6 +582,11 @@ a {
 .container {
   padding: 1rem;
 }
+@media (min-width: 768px) {
+  .container {
+    padding: 2.25rem;
+  }
+}
 .container__header {
   font-size: 14px;
   font-weight: 600;
@@ -598,8 +603,6 @@ a {
 }
 @media screen and (min-width: 1280px) {
   .container__header {
-    padding-top: 3rem;
-    padding-bottom: 1.5rem;
     padding-left: 5rem;
     font-weight: 100;
   }
@@ -640,19 +643,29 @@ a {
 }
 .container__name {
   height: 2.25rem;
-  padding-left: 0.25rem;
+  padding: 0.75rem;
   background-color: #fafafa;
   border: 1px solid #e1e1e1;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   font-family: "AvenirNext-Regular";
   font-size: 10px;
   font-weight: 600;
   line-height: 20px;
 }
+.container__name:focus {
+  outline: 1px solid #323232;
+}
+.container__name:active {
+  outline: 1px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .container__name {
+    padding: 1rem;
+  }
+}
 .container__name--add-comment {
   height: 5rem;
-  padding-top: 0.5rem;
-  padding-left: 0.25rem;
+  padding: 0.75rem;
   font-size: 10px;
   font-weight: 600;
   line-height: 20px;
@@ -741,6 +754,13 @@ fieldset {
   font-weight: 400;
   line-height: 18px;
 }
+.comments--border {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 1.25rem;
+}
+.comments--border:not(:first-child) {
+  border-top: none;
+}
 .comments__image {
   width: 36px;
   height: 36px;
@@ -762,8 +782,4 @@ fieldset {
 }
 .comments__content--person {
   font-weight: 600;
-}
-
-form > div > fieldset > input[type=text]:active + label {
-  outline: 1px solid green;
 }/*# sourceMappingURL=bio.css.map */
