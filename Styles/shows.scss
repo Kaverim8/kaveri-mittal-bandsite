@@ -20,10 +20,6 @@ a {
     color: $white;
 }
 
-input {
-    border: hidden ;
-}
-
 .hero {
     background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
                     url(../assets/Images/hero-shows.jpg);
@@ -101,6 +97,7 @@ iframe {
     }
 }
 
+// shows
 .shows {
     @include desktop {
         display: flex;
@@ -108,8 +105,8 @@ iframe {
         width: 80%;
         height: auto;
         margin: 0 auto;
-        height: 60vh;
-        overflow: hidden;
+        height: 50vh;
+        
     }
 
     &__header{
@@ -127,6 +124,7 @@ iframe {
         }
     }
 
+    // shows through dom api
     &__content {
         font-family: 'AvenirNext-Regular';
         display: flex;
@@ -152,7 +150,6 @@ iframe {
         &:hover {
             background-color: $Alabaster;   
         }
-
 
         @include tablet {
             border: none;

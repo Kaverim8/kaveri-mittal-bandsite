@@ -302,14 +302,14 @@ a {
         @include Font-lablesButtons-tablet;
         width: 80%;
         margin: 0 auto;
-    }
+        }
 
     @include desktop {
         width: 50%;
         padding-left: 3.25rem;
+        }
     }
-    }
-    
+
     &__banner {
         @include image;
     }
@@ -328,7 +328,7 @@ a {
         @include Font-lablesButtons-mobile;
 
         &:focus {
-            outline: 1px solid $BandSite-Black;
+            outline: 1px solid $BandSite-DarkBlack;
 
             &::placeholder {
                 color: transparent;
@@ -356,6 +356,7 @@ a {
             justify-content: flex-end;
         }
     }
+
     &__comment-button {
         @include Button;
         font-size: 13px;
@@ -432,7 +433,6 @@ fieldset {
         flex-direction: column;
         gap: 0.25rem;
     }
-
 
     &__content {
         display: flex;

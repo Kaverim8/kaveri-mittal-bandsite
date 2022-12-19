@@ -661,7 +661,7 @@ a {
   line-height: 20px;
 }
 .container__name:focus {
-  outline: 1px solid #323232;
+  outline: 1px solid #000000;
 }
 .container__name:focus::-moz-placeholder {
   color: transparent;

@@ -70,6 +70,7 @@ function createShowsCard(show) {
     const cityEl = document.createElement("p");
     cityEl.innerText = show.location;
 
+    // this is for buy tickets button
     const BuyTicketsEl = document.createElement("div")
     BuyTicketsEl.classList.add("shows__shows-button")
 
@@ -99,10 +100,9 @@ function renderShows() {
         showsListEl.appendChild(createShowsCard(showsArray[i]));
     }
 }
-
 renderShows();
 
-
+// shows page stay selected function
 const showOnClick =  document.querySelectorAll(".shows__details");
 showOnClick.forEach(shows__details => {
     shows__details.addEventListener ('mousedown', function() {

@@ -305,10 +305,6 @@ a {
   color: #ffffff;
 }
 
-input {
-  border: hidden;
-}
-
 .hero {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/Images/hero-shows.jpg);
   width: 100%;
@@ -400,8 +396,7 @@ iframe {
     width: 80%;
     height: auto;
     margin: 0 auto;
-    height: 60vh;
-    overflow: hidden;
+    height: 50vh;
   }
 }
 .shows__header {
