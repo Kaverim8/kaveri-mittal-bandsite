@@ -88,12 +88,12 @@
                             <!-- name input -->
                             <fieldset>
                                 <label for= "name"> NAME</label>
-                                <input type= "text" id= "name" name= "name"  class= "container__name" placeholder= "Enter your name" required>
+                                <input type= "text" id= "name" name= "name" pattern="[A-Za-z]" class= "container__name" placeholder= "Enter your name" required>
                             </fieldset>
                                 <!-- comment input-->
                             <fieldset>
                                 <label for= "comment"> COMMENT</label>
-                                <textarea name= "comment" id= "comment"  class= "container__name container__name--add-comment" placeholder= "Add a new comment" required></textarea>
+                                <textarea name= "comment" id= "comment" pattern="[A-Za-z]" class= "container__name container__name--add-comment" placeholder= "Add a new comment" required></textarea>
                             </fieldset>
                             <div class= "container__button">
                                 <button type= "submit"  value= "COMMENT" class= "container__comment-button">COMMENT</button>
