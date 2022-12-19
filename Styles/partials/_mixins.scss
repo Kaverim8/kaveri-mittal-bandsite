@@ -82,8 +82,7 @@
 }
 
 
-
-
+// comment and buy tickets button
 @mixin Button {
     background-color: $BandSite-Black;
         color: $white;
@@ -100,4 +99,12 @@
             padding-right: 32px;
             @include Font-lablesButtons-tablet;
 }
+}
+
+// comment image
+@mixin  image {
+    width:2.88rem;
+    height:2.88rem;
+    border-radius: 50%;
+    object-fit: cover; 
 }

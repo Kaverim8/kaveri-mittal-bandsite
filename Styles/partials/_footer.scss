@@ -11,6 +11,11 @@
     background-color: $BandSite-Black;
     color: $white;
     padding: $padding-mobile;
+    margin-top: 1rem;
+
+    @include tablet {
+        margin-top: 2rem;
+    }
 
     @include desktop {
         width: 90vw;

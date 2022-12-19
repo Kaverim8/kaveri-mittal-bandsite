@@ -27,7 +27,7 @@ let showsArray = [{
 
 function createShowsCard(show) {
     const cardEl = document.createElement("div");
-    cardEl.classList.add("shows__details", "shows__active");
+    cardEl.classList.add("shows__details");
 
     const showsEl = document.createElement("article");
     showsEl.classList.add("shows__main-content");
@@ -102,21 +102,16 @@ function renderShows() {
 
 renderShows();
 
-// const showsOnClick = document.querySelectorAll(".shows__active");
-// showsOnClick.forEach(shows__active => {
-//     shows__active.addEventListener('click', function(){
-//         shows__active.forEach(showsClick => showsClick.classList.remove('active'));
-//         this.classList.add('active');
-//     });
-// });
 
-const showsOnClick = document.querySelectorAll(".shows__details");
-showsOnClick.forEach(shows__details => {
-    shows__details.addEventListener('mousedown', function(){
-        showsOnClick.forEach(showsClick => showsClick.classList.remove('active'));
-        this.classList.add('active');
-    });
+const showOnClick =  document.querySelectorAll(".shows__details");
+showOnClick.forEach(shows__details => {
+    shows__details.addEventListener ('mousedown', function() {
+    const selection = document.getElementById("active");
+    if (selection === null) {
+        shows__details.setAttribute('id', "active");
+    } else {
+        selection.removeAttribute('id');
+        shows__details.setAttribute('id', "active");
+    } 
+        });
 });
-
-
-

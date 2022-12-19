@@ -140,6 +140,12 @@
   background-color: #323232;
   color: #ffffff;
   padding: 1rem;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    margin-top: 2rem;
+  }
 }
 @media screen and (min-width: 1280px) {
   .footer {
@@ -634,9 +640,11 @@ a {
   }
 }
 .container__banner {
-  width: 46px;
-  height: 46px;
+  width: 2.88rem;
+  height: 2.88rem;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container__right {
   padding-top: 1.75rem;
@@ -655,8 +663,17 @@ a {
 .container__name:focus {
   outline: 1px solid #323232;
 }
-.container__name:active {
-  outline: 1px solid #e1e1e1;
+.container__name:focus::-moz-placeholder {
+  color: transparent;
+}
+.container__name:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.container__name:focus::placeholder {
+  color: transparent;
+}
+.container__name:focus:invalid {
+  outline: 1px solid red;
 }
 @media (min-width: 768px) {
   .container__name {
@@ -762,10 +779,12 @@ fieldset {
   border-top: none;
 }
 .comments__image {
-  width: 36px;
-  height: 36px;
-  background-color: #e1e1e1;
+  width: 2.88rem;
+  height: 2.88rem;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #e1e1e1;
 }
 .comments__main-content {
   width: 80%;

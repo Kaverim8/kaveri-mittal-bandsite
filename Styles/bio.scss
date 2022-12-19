@@ -308,12 +308,10 @@ a {
         width: 50%;
         padding-left: 3.25rem;
     }
-
     }
+    
     &__banner {
-        width:46px;
-        height:46px;
-        border-radius: 50%;
+        @include image;
     }
 
     &__right {
@@ -331,10 +329,14 @@ a {
 
         &:focus {
             outline: 1px solid $BandSite-Black;
-        }
 
-        &:active {
-            outline: 1px solid $Mercury;
+            &::placeholder {
+                color: transparent;
+            }
+
+            &:invalid {
+                outline: 1px solid red;
+            }
         }
         
         @include tablet {
@@ -420,10 +422,8 @@ fieldset {
     }
 
     &__image {
-        width: 36px;
-        height: 36px;
+        @include image;
         background-color: $Mercury;
-        border-radius: 50%;
     }
 
     &__main-content {
