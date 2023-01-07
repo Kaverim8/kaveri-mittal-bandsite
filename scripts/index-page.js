@@ -6,10 +6,10 @@ const commentArray = [
         image: " ",
     },
     {
-    name: "Emilie Beach",
-    timeStamp: "01/09/2021",
-    comment: `I feel blessed to have seen them in person. What a show! They were just perfection. If therewas one day of my life I could relive, this wouldbe it. What an incredible day.`,
-    image: " ",
+        name: "Emilie Beach",
+        timeStamp: "01/09/2021",
+        comment: `I feel blessed to have seen them in person. What a show! They were just perfection. If therewas one day of my life I could relive, this wouldbe it. What an incredible day.`,
+        image: " ",
     },
     {
         name: "Miles Acosta",
@@ -57,7 +57,7 @@ function createCommentCard(post) {
     return cardEl;
 }
 
-function renderComments() {
+function displayComments() {
     const myCommentsEl = document.querySelector("#Comments");
 
     myCommentsEl.innerHTML = "";
@@ -79,12 +79,10 @@ const commentData = {
     comment: e.target.comment.value,
 };
 
-console.log(commentData);
-
 commentsFormEl.reset();
 commentArray.unshift(commentData);
-renderComments();
+displayComments();
 }
 
 commentsFormEl.addEventListener("submit", formSubmitHandler);
-renderComments();
+displayComments();

@@ -89,8 +89,6 @@ function createShowsCard(show) {
     return cardEl;
 }
 
-// createShowsCard();
-
 function renderShows() {
     const showsListEl = document.querySelector("#shows")
 
