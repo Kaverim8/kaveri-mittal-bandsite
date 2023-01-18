@@ -1,29 +1,54 @@
-let showsArray = [{
-    day: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco,CA" 
-},
-{
-    day: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco,CA" 
-},
-{
-    day: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco,CA" 
-},
-{
-    day: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco,CA"
-},
-{
-    day: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco,CA",
-},
-];
+const apikey = "ebd4424c-8699-41a7-bfb5-50dc374276fd";
+
+let showsArray = [];
+console.log(showsArray);
+
+const getShowsData = () => {
+    axios 
+    .get(`https://project-1-api.herokuapp.com/showdates/?api_key=${apikey}`)
+    .then((response) => {
+        const showsResponse = response.data
+        showsResponse.forEach(element => {
+            showsArray.push(element);
+        })
+    })
+    .then((res) => {
+        renderShows();
+    })
+   .catch((error) => {
+    console.log(error);
+   })
+};
+
+getShowsData();
+
+
+// let showsArray = [{
+//     day: "Mon Sept 06 2021",
+//     venue: "Ronald Lane",
+//     location: "San Francisco,CA" 
+// },
+// {
+//     day: "Tue Sept 21 2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco,CA" 
+// },
+// {
+//     day: "Sat Nov 06 2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco,CA" 
+// },
+// {
+//     day: "Fri Nov 26 2021",
+//     venue: "Moscow Center",
+//     location: "San Francisco,CA"
+// },
+// {
+//     day: "Wed Dec 15 2021",
+//     venue: "Press Club",
+//     location: "San Francisco,CA",
+// },
+// ];
 
 function createShowsCard(show) {
     const cardEl = document.createElement("div");
@@ -42,7 +67,9 @@ function createShowsCard(show) {
 
     const dayEl = document.createElement("p");
     dayEl.classList.add("shows__sub-content--font-weight")
-    dayEl.innerText = show.day;
+    const formattedDate = new Date(show.date);
+    const newDate = `${formattedDate.getMonth()+1}/${formattedDate.getDate()}/${formattedDate.getFullYear()}`;
+    dayEl.innerText = newDate;
 
     dateEl.append(dateParagraphEl, dayEl);
 
@@ -55,7 +82,7 @@ function createShowsCard(show) {
     venueParagraphEl.innerText = "Venue";
 
     const addressEl = document.createElement("p");
-    addressEl.innerText = show.venue;
+    addressEl.innerText = show.place;
 
     venueEl.append(venueParagraphEl, addressEl);
 

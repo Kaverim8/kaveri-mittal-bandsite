@@ -1,23 +1,38 @@
-const commentArray = [
-    {
-        name: "Conor Walton",
-        timeStamp: "02/17/2021",
-        comment: `This is art. This is inexplicable magic expressed in the purest way,everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.`,
-        image: " ",
-    },
-    {
-        name: "Emilie Beach",
-        timeStamp: "01/09/2021",
-        comment: `I feel blessed to have seen them in person. What a show! They were just perfection. If therewas one day of my life I could relive, this wouldbe it. What an incredible day.`,
-        image: " ",
-    },
-    {
-        name: "Miles Acosta",
-        timeStamp: "12/20/2020",
-        comment: `I can't stop listening. Every time I hear one of their songs - the  vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough`,
-        image: " ",      
-    },
-];
+const apikey = "ebd4424c-8699-41a7-bfb5-50dc374276fd";
+
+let commentArray = [];
+console.log(commentArray);
+
+// const getCommentData = () => {
+//     axios
+//     .get(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`)
+//     .then((response) => {
+//         const commentResponse = response.data;
+//         console.log(response);
+//         displayComments(commentResponse);
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     });
+// };
+// getCommentData();
+const getCommentData = () => {
+    axios
+    .get(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`)
+    .then((response) => {
+        const holdingData = response.data;
+        holdingData.forEach(element => {
+            commentArray.push(element);
+        });
+    }).then((commentResponse) => {
+        displayComments();
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+};
+getCommentData();
+
 
 function createCommentCard(post) {
     const cardEl = document.createElement("div");
@@ -34,11 +49,17 @@ function createCommentCard(post) {
 
     const dateEl = document.createElement("p");
     dateEl.classList.add("comments__content--date");
-    dateEl.innerText = post.timeStamp;
+    
+    
+    const formattedDate = new Date(commentArray.timestamp);
+    // console.log(formattedDate.getDate());
+    const newDate = `${formattedDate.getMonth()+1}/${formattedDate.getDate()}/${formattedDate.getFullYear()}`;
+    dateEl.innerText = newDate;
+    
     
     const nameEl = document.createElement("p");
     nameEl.classList.add("comments__content--person");
-    nameEl.innerText = post.name;
+    nameEl.innerText = commentArray.name;
 
     commentContentEl.append(nameEl, dateEl);
 
@@ -46,9 +67,18 @@ function createCommentCard(post) {
     commentTextEl.classList.add("comments__text");
 
     const commentEl = document.createElement("p");
-    commentEl.innerText = post.comment;
+    commentEl.innerText = commentArray.comment;
 
-    commentTextEl.append(commentEl);
+    const likeButtonEL = document.createElement("button");
+    likeButtonEL.classList.add("comments__like");
+
+    const deleteButtonEL = document.createElement("button");
+    deleteButtonEL.classList.add("comments__delete");
+    
+
+    commentTextEl.append(commentEl, likeButtonEL, deleteButtonEL)
+
+    // commentTextEl.append(commentEl);
 
     commentMainContentEl.append(commentContentEl, commentTextEl);
 
@@ -62,8 +92,13 @@ function displayComments() {
 
     myCommentsEl.innerHTML = "";
 
-    for (let i = 0; i < commentArray.length; i++) {
+    // for (let i = 0; i < commentArray.length; i++) {
+    //     myCommentsEl.appendChild(createCommentCard(commentArray[i]));
+    // }
+
+    for (let i = commentArray.length; i >= 0; i--) {
         myCommentsEl.appendChild(createCommentCard(commentArray[i]));
+            console.log (commentArray[i]);
     }
 }
 
@@ -72,16 +107,35 @@ const commentsFormEl = document.querySelector("#form");
 function formSubmitHandler(e) {
     e.preventDefault();
 
-const dateNow = new Date();
-const commentData = {
-    name: e.target.name.value,
-    timeStamp: (dateNow.getMonth()+1) + '/' + dateNow.getDate() + '/' + dateNow.getFullYear(),
-    comment: e.target.comment.value,
-};
+// const dateNow = new Date();
+// const commentData = {
+//     name: e.target.name.value,
+//     timeStamp: (dateNow.getMonth()+1) + '/' + dateNow.getDate() + '/' + dateNow.getFullYear(),
+//     comment: e.target.comment.value,
+// };
+    let name = document.getElementById('name').value;
+    let comment = document.getElementById('comment').value;
 
-commentsFormEl.reset();
-commentArray.unshift(commentData);
-displayComments();
+
+    axios
+    .post(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`, {
+        name: name,
+        comment: comment
+    })
+    .then((response) => {
+        commentArray.push(response.data);
+    })
+    .then((res) => {
+        displayComments();
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+    commentsFormEl.reset();
+    displayComments();
+// commentsFormEl.reset();
+// commentArray.unshift(commentData);
+// displayComments();
 }
 
 commentsFormEl.addEventListener("submit", formSubmitHandler);
