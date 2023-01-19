@@ -446,4 +446,23 @@ fieldset {
             font-weight: 600;
         }
     }
+
+    &__btn {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+    &__btn-like {
+        background-image: url(../assets/Icons/SVG/icon-like.svg);
+        height: 18px;
+        width: 20px;
+        border: none;
+    }
+
+    &__btn-delete  {
+        background-image: url(../assets/Icons/SVG/icon-delete.svg);
+        height: 18px;
+        width: 15px;
+        border: none;
+    }
 }

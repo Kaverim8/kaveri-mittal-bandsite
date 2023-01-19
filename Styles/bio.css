@@ -801,4 +801,21 @@ fieldset {
 }
 .comments__content--person {
   font-weight: 600;
+}
+.comments__btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.comments__btn-like {
+  background-image: url(../assets/Icons/SVG/icon-like.svg);
+  height: 18px;
+  width: 20px;
+  border: none;
+}
+.comments__btn-delete {
+  background-image: url(../assets/Icons/SVG/icon-delete.svg);
+  height: 18px;
+  width: 15px;
+  border: none;
 }/*# sourceMappingURL=bio.css.map */

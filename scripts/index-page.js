@@ -1,30 +1,15 @@
-const apikey = "ebd4424c-8699-41a7-bfb5-50dc374276fd";
-
 let commentArray = [];
 console.log(commentArray);
 
-// const getCommentData = () => {
-//     axios
-//     .get(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`)
-//     .then((response) => {
-//         const commentResponse = response.data;
-//         console.log(response);
-//         displayComments(commentResponse);
-//     })
-//     .catch((error) => {
-//         console.log(error);
-//     });
-// };
-// getCommentData();
-const getCommentData = () => {
+function getCommentData () {
     axios
     .get(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`)
     .then((response) => {
         const holdingData = response.data;
         holdingData.forEach(element => {
-            commentArray.push(element);
-        });
-    }).then((commentResponse) => {
+        commentArray.push(element);
+        // commentArray.reverse();
+    });
         displayComments();
     })
     .catch((error) => {
@@ -33,8 +18,8 @@ const getCommentData = () => {
 };
 getCommentData();
 
-
-function createCommentCard(post) {
+function createCommentCard(post){
+    
     const cardEl = document.createElement("div");
     cardEl.classList.add("comments", "comments--border");
 
@@ -51,15 +36,14 @@ function createCommentCard(post) {
     dateEl.classList.add("comments__content--date");
     
     
-    const formattedDate = new Date(commentArray.timestamp);
-    // console.log(formattedDate.getDate());
+    const formattedDate = new Date(post.timestamp);
     const newDate = `${formattedDate.getMonth()+1}/${formattedDate.getDate()}/${formattedDate.getFullYear()}`;
     dateEl.innerText = newDate;
     
     
     const nameEl = document.createElement("p");
     nameEl.classList.add("comments__content--person");
-    nameEl.innerText = commentArray.name;
+    nameEl.innerText = post.name;
 
     commentContentEl.append(nameEl, dateEl);
 
@@ -67,18 +51,23 @@ function createCommentCard(post) {
     commentTextEl.classList.add("comments__text");
 
     const commentEl = document.createElement("p");
-    commentEl.innerText = commentArray.comment;
+    commentEl.innerText = post.comment;
+
+    const commentButtonsFunctionalityEl = document.createElement("div");
+    commentButtonsFunctionalityEl.classList.add("comments__btn");
 
     const likeButtonEL = document.createElement("button");
-    likeButtonEL.classList.add("comments__like");
+    likeButtonEL.classList.add("comments__btn-like");
+    likeButtonEL.setAttribute('id', 'like')
 
     const deleteButtonEL = document.createElement("button");
-    deleteButtonEL.classList.add("comments__delete");
+    deleteButtonEL.classList.add("comments__btn-delete");
+    deleteButtonEL.setAttribute('id', 'comment-id')
     
+    commentButtonsFunctionalityEl.append(likeButtonEL, deleteButtonEL);
 
-    commentTextEl.append(commentEl, likeButtonEL, deleteButtonEL)
+    commentTextEl.append(commentEl, commentButtonsFunctionalityEl);
 
-    // commentTextEl.append(commentEl);
 
     commentMainContentEl.append(commentContentEl, commentTextEl);
 
@@ -92,14 +81,13 @@ function displayComments() {
 
     myCommentsEl.innerHTML = "";
 
-    // for (let i = 0; i < commentArray.length; i++) {
+    for (let i = 0; i < commentArray.length; i++) {
+        myCommentsEl.appendChild(createCommentCard(commentArray[i]));
+    }
+
+    // for (let i = commentArray.length-1; i >= 0; i--) {
     //     myCommentsEl.appendChild(createCommentCard(commentArray[i]));
     // }
-
-    for (let i = commentArray.length; i >= 0; i--) {
-        myCommentsEl.appendChild(createCommentCard(commentArray[i]));
-            console.log (commentArray[i]);
-    }
 }
 
 const commentsFormEl = document.querySelector("#form");
@@ -107,23 +95,30 @@ const commentsFormEl = document.querySelector("#form");
 function formSubmitHandler(e) {
     e.preventDefault();
 
-// const dateNow = new Date();
-// const commentData = {
-//     name: e.target.name.value,
-//     timeStamp: (dateNow.getMonth()+1) + '/' + dateNow.getDate() + '/' + dateNow.getFullYear(),
-//     comment: e.target.comment.value,
-// };
     let name = document.getElementById('name').value;
     let comment = document.getElementById('comment').value;
-
+    let currentDate = new Date();
+    // let commentData = {
+    //     name: document.getElementById('name').value,
+    //     comment: document.getElementById('comment').value,
+    //     timestamp: `${currentDate.getSeconds()}` + " " + 'seconds ago',
+    // }
 
     axios
     .post(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`, {
         name: name,
-        comment: comment
+        comment: comment,
+        // timestamp: `${currentDate.getSeconds()}` + " " + 'seconds ago',
     })
     .then((response) => {
+        
+        // this is added for displaying comments on top
         commentArray.push(response.data);
+        // commentArray.sort();
+        // commentArray.reverse();
+        commentArray.unshift(response.data);
+        
+        
     })
     .then((res) => {
         displayComments();
@@ -131,12 +126,14 @@ function formSubmitHandler(e) {
     .catch((error) => {
         console.log(error);
     });
+
     commentsFormEl.reset();
     displayComments();
-// commentsFormEl.reset();
-// commentArray.unshift(commentData);
-// displayComments();
 }
 
 commentsFormEl.addEventListener("submit", formSubmitHandler);
 displayComments();
+// getCommentData();
+
+
+

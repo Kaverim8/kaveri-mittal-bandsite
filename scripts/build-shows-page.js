@@ -1,5 +1,3 @@
-const apikey = "ebd4424c-8699-41a7-bfb5-50dc374276fd";
-
 let showsArray = [];
 console.log(showsArray);
 
@@ -15,40 +13,13 @@ const getShowsData = () => {
     .then((res) => {
         renderShows();
     })
-   .catch((error) => {
+    .catch((error) => {
     console.log(error);
-   })
+    })
 };
 
 getShowsData();
 
-
-// let showsArray = [{
-//     day: "Mon Sept 06 2021",
-//     venue: "Ronald Lane",
-//     location: "San Francisco,CA" 
-// },
-// {
-//     day: "Tue Sept 21 2021",
-//     venue: "Pier 3 East",
-//     location: "San Francisco,CA" 
-// },
-// {
-//     day: "Sat Nov 06 2021",
-//     venue: "Hyatt Agency",
-//     location: "San Francisco,CA" 
-// },
-// {
-//     day: "Fri Nov 26 2021",
-//     venue: "Moscow Center",
-//     location: "San Francisco,CA"
-// },
-// {
-//     day: "Wed Dec 15 2021",
-//     venue: "Press Club",
-//     location: "San Francisco,CA",
-// },
-// ];
 
 function createShowsCard(show) {
     const cardEl = document.createElement("div");
@@ -68,7 +39,7 @@ function createShowsCard(show) {
     const dayEl = document.createElement("p");
     dayEl.classList.add("shows__sub-content--font-weight")
     const formattedDate = new Date(show.date);
-    const newDate = `${formattedDate.getMonth()+1}/${formattedDate.getDate()}/${formattedDate.getFullYear()}`;
+    const newDate = `${formattedDate.toDateString()}`
     dayEl.innerText = newDate;
 
     dateEl.append(dateParagraphEl, dayEl);
