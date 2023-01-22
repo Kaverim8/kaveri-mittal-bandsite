@@ -27,7 +27,7 @@ function createShowsCard(show) {
     dateEl.classList.add("shows__sub-content");
 
     const dateParagraphEl = document.createElement("h3")
-    dateParagraphEl.classList.add("shows__sub-content--color");
+    dateParagraphEl.classList.add("shows__labels");
     dateParagraphEl.innerText = "Date";
 
     const dayEl = document.createElement("p");
@@ -43,7 +43,7 @@ function createShowsCard(show) {
     venueEl.classList.add("shows__sub-content");
 
     const venueParagraphEl = document.createElement("h3")
-    venueParagraphEl.classList.add("shows__sub-content--color");
+    venueParagraphEl.classList.add("shows__labels");
     venueParagraphEl.innerText = "Venue";
 
     const addressEl = document.createElement("p");
@@ -56,10 +56,11 @@ function createShowsCard(show) {
     locationEl.classList.add("shows__sub-content");
 
     const locationParagraphEl = document.createElement("h3")
-    locationParagraphEl.classList.add("shows__sub-content--color");
+    locationParagraphEl.classList.add("shows__labels");
     locationParagraphEl.innerText = "Location";
 
     const cityEl = document.createElement("p");
+    cityEl.classList.add("shows__labels--city");
     cityEl.innerText = show.location;
 
     // this is for buy tickets button
@@ -105,18 +106,3 @@ showOnClick.forEach(shows__details => {
     } 
         });
 });
-
-
-// .then((response) => {
-//     const showsResponse = response.data
-//     showsResponse.forEach(element => {
-//         showsArray.push(element);
-//     })
-// })
-// .then((res) => {
-//     renderShows();
-// })
-// .catch((error) => {
-// console.log(error);
-// })
-// };

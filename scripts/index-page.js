@@ -91,6 +91,8 @@ const commentsFormEl = document.querySelector("#form");
 
 function formSubmitHandler(e) {
     e.preventDefault();
+
+
     let commentData = {
         name: e.target.name.value,
         comment: e.target.comment.value,
@@ -123,7 +125,7 @@ function likeHandler (e) {
     const incrementLike = () => {
         axios 
     .put(`https://project-1-api.herokuapp.com/comments/${likeId}/like?api_key=${apikey}`) 
-    .then((response) => {
+    .then(() => {
         getCommentData();
     })
     .catch((error) => {
@@ -142,7 +144,7 @@ function deleteHandler (e) {
     const deleteComment = () => {
         axios 
     .delete(`https://project-1-api.herokuapp.com/comments/${deleteId}/?api_key=${apikey}`) 
-    .then((response) => {
+    .then(() => {
         getCommentData();
     })
     .catch((error) => {
@@ -151,11 +153,6 @@ function deleteHandler (e) {
     };
     deleteComment();
 }
-
-
-
-
-
 
 
 
