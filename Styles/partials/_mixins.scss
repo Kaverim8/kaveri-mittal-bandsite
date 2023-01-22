@@ -81,7 +81,6 @@
     line-height: 20px;
 }
 
-
 // comment and buy tickets button
 @mixin Button {
     background-color: $BandSite-Black;
@@ -107,4 +106,11 @@
     height:2.88rem;
     border-radius: 50%;
     object-fit: cover; 
+}
+
+@mixin likeDeleteButton {
+    height: 18px;
+    width: 20px;
+    border: none;
+    cursor: pointer;
 }

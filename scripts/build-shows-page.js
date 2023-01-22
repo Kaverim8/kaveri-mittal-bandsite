@@ -1,16 +1,10 @@
 let showsArray = [];
-console.log(showsArray);
 
 const getShowsData = () => {
     axios 
     .get(`https://project-1-api.herokuapp.com/showdates/?api_key=${apikey}`)
     .then((response) => {
-        const showsResponse = response.data
-        showsResponse.forEach(element => {
-            showsArray.push(element);
-        })
-    })
-    .then((res) => {
+        showsArray = response.data;
         renderShows();
     })
     .catch((error) => {
@@ -111,3 +105,18 @@ showOnClick.forEach(shows__details => {
     } 
         });
 });
+
+
+// .then((response) => {
+//     const showsResponse = response.data
+//     showsResponse.forEach(element => {
+//         showsArray.push(element);
+//     })
+// })
+// .then((res) => {
+//     renderShows();
+// })
+// .catch((error) => {
+// console.log(error);
+// })
+// };

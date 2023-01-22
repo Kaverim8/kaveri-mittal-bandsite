@@ -451,20 +451,16 @@ fieldset {
         display: flex;
         justify-content: flex-end;
         gap: 0.5rem;
+        padding-top: 0.25rem;
     }
     &__btn-like {
         background-image: url(../assets/Icons/SVG/icon-like.svg);
-        height: 18px;
-        width: 20px;
-        border: none;
-        cursor: pointer;
+        @include likeDeleteButton;
     }
 
     &__btn-delete  {
         background-image: url(../assets/Icons/SVG/icon-delete.svg);
-        height: 18px;
-        width: 15px;
-        border: none;
-        cursor: pointer;
+        @include likeDeleteButton;
+        width: 0.9rem;
     }
 }

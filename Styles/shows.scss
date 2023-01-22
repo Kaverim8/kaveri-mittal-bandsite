@@ -42,11 +42,18 @@ a {
 
     &__content {
         @include desktop {
-            padding-top: 10rem;
             display: flex;
-            align-items: end;
-            padding-left: 4rem;
-            padding-right: 4rem;
+            gap: 8rem;
+            justify-content: flex-end;
+            margin: 0 auto;
+            width: 90vw;
+            padding-top: 12rem;
+
+            // padding-top: 10rem;
+            // display: flex;
+            // align-items: end;
+            // padding-left: 4rem;
+            // padding-right: 4rem;
             }
     }
     
@@ -76,6 +83,10 @@ a {
             @include Font-pageHeader-tablet;
             width: 70%;
         }
+
+        @include desktop {
+            width: 40vw;
+        }
     }
 
     &__sound-cloud {
@@ -85,6 +96,10 @@ a {
 
         @include tablet {
             padding-top: 1.5rem;
+        }
+
+        @include desktop {
+            padding-top: 3.25rem;
         }
     }
 }
@@ -109,9 +124,8 @@ iframe {
         display: flex;
         justify-content: space-between;
         width: 80%;
-        height: auto;
         margin: 0 auto;
-        height: 50vh;      
+        
     }
 
     &__header{
@@ -146,10 +160,8 @@ iframe {
         }
 
         @include desktop {
-            position: relative;
-            top: 3rem;
+            padding: 3rem 0;   
             width: 70%;
-            
         }
     }
 

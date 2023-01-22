@@ -1,5 +1,4 @@
 let commentArray = [];
-// console.log(commentArray);
 
 function getCommentData () {
     axios
@@ -92,12 +91,12 @@ const commentsFormEl = document.querySelector("#form");
 
 function formSubmitHandler(e) {
     e.preventDefault();
-
     let commentData = {
         name: e.target.name.value,
         comment: e.target.comment.value,
     }
-// this is for post request
+
+// this function is for post request
     axios
     .post(`https://project-1-api.herokuapp.com/comments/?api_key=${apikey}`, {
         name: commentData.name,
